@@ -4,27 +4,24 @@ ScrapeOps middleware for Scrapy (http://scrapy.org/)
 Processes Scrapy requests using ScapeOps
 
 
-Install
+Install with pip
 --------
 
 
-    ppip install scrapeops-scrapy-proxy-sdk
+    pip install scrapeops-scrapy-proxy-sdk
 
 
 
-settings.py
+Add to your scrapy project settings.py file
 -----------
 
 
-  SCRAPEOPS_API_KEY = 'YOUR_API_KEY'
+    SCRAPEOPS_API_KEY = 'YOUR_API_KEY'
 
   
-  SCRAPEOPS_PROXY_ENABLED = True
+    SCRAPEOPS_PROXY_ENABLED = True
 
 
-  DOWNLOADER_MIDDLEWARES = {
-    'YOUR_PROJECT_NAME.middlewares.ScrapeOpsScrapyProxySdk': 725,
-
-  }
-
-NOTE: Remember to swap the YOUR_PROJECT_NAME for the name of your project (BOT_NAME in your settings.py file)
+    DOWNLOADER_MIDDLEWARES = {
+        'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
+    }
